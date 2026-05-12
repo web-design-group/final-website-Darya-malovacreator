@@ -1,0 +1,231 @@
+@font-face {
+    font-family: "Bulbasaur";
+    src: url("BulbasaurSP.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter';
+    background: url("background.png") no-repeat center/cover;
+}
+
+/* overlay */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(65, 90, 119, 0.5);
+    z-index: -1;
+}
+
+/* ГРАДИЕНТЫ */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.644), transparent 20%, transparent 80%, rgba(0,0,0,0.644));
+    z-index: -1;
+}
+
+/* HEADER */
+.header {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 58px;
+    background: #E0E1DD;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+}
+
+.nav a {
+    font-size: 24px;
+    color: #0D1B2A;
+    text-decoration: none;
+}
+
+.nav .active {
+    color: #778DA9;
+}
+
+/* большая корзина */
+.cart-big {
+    position: fixed;
+    top: 80px;
+    right: 40px;
+}
+
+.cart-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #E0E1DD;
+    border: none;
+}
+
+.cart-btn:active {
+    background: #415A77;
+}
+
+.cart-btn img {
+    width: 40px;
+}
+
+/* MAIN */
+.main {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: "Bulbasaur";
+    font-size: 50px;
+    color: #E0E1DD;
+    margin-bottom: 40px;
+}
+
+/* СЕТКА */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    max-width: 1000px;
+}
+
+/* карточка */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* верх карточки */
+.card-top {
+    position: relative;
+}
+
+/* маленькая корзина */
+.cart-small {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #E0E1DD;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cart-small img {
+    width: 20px;
+}
+
+input {
+    display: none;
+}
+
+/* активное состояние */
+input:checked + .cart-small {
+    background: #415A77;
+}
+
+/* картинка */
+.product-img {
+    width: 250px;
+    border-radius: 10px;
+}
+
+/* текст */
+.name {
+    font-family: "Bulbasaur";
+    font-size: 25px;
+    color: #E0E1DD;
+    margin-top: 10px;
+}
+
+.price {
+    font-family: "Bulbasaur";
+    color: #E0E1DD;
+}
+
+/* футер */
+.footer {
+    margin-top: 100px;
+    background: #E0E1DD;
+    height: 200px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 60px;
+}
+
+/* левый блок */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.footer p {
+    font-size: 20px;
+    color: #0D1B2A;
+}
+
+/* центр */
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-item span {
+    font-size: 20px;
+    color: #0D1B2A;
+}
+
+.footer-item img {
+    height: 30px;
+}
+
+/* правый */
+.footer-right img {
+    height: 80px;
+}
