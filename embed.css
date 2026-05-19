@@ -1,0 +1,26 @@
+html.is-embed .header,
+html.is-embed .cart-big,
+html.is-embed .cart-float,
+html.is-embed:not(.menu-embed) footer.footer,
+html.is-embed .back-btn,
+html.is-embed a.cart-btn {
+    display: none !important;
+}
+
+html.is-embed.tovar-embed .back-btn {
+    display: flex !important;
+}
+
+html.is-embed .main,
+html.is-embed .page-main,
+html.is-embed main.page {
+    margin-top: 0 !important;
+}
+
+html.is-embed body {
+    min-height: auto;
+}
+
+html.is-embed.menu-embed footer.footer {
+    display: flex !important;
+}

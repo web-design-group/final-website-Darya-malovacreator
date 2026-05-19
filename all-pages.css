@@ -1,0 +1,937 @@
+/* Все блоки приложения со страницы all-pages.html */
+@import url("site-shared.css");
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка на всю ширину (как index.html) */
+body.all-app .header {
+    padding: 0 clamp(16px, 4vw, 48px);
+}
+
+body.all-app .nav {
+    width: 100%;
+    max-width: none;
+    justify-content: space-between;
+    gap: clamp(8px, 1.5vw, 24px);
+    padding: 0;
+}
+
+body.all-app .nav a,
+body.all-app .nav .router-link {
+    flex: 1 1 0;
+    text-align: center;
+    font-size: clamp(14px, 1.55vw, 24px);
+    color: #0d1b2a;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+body.all-app .nav a:hover,
+body.all-app .nav .router-link:hover {
+    color: #415a77;
+}
+
+body.all-app .nav .router-link.active,
+body.all-app .nav a.active {
+    color: #778da9;
+}
+
+body.all-app .cart-float-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #e0e1dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+body.all-app .cart-float-btn.router-link,
+body.all-app .cart-float-btn.router-link:hover,
+body.all-app .cart-float-btn.router-link:active,
+body.all-app .cart-float-btn.router-link:focus-visible {
+    background: #e0e1dd;
+}
+
+body.all-app .cart-float-btn img {
+    width: 40px;
+    height: auto;
+}
+
+body.all-app .cart-float.is-hidden {
+    display: none;
+}
+
+/* Главная в SPA — как index.html / Figma */
+body.all-app.route-home {
+    color: #e0e1dd;
+}
+
+body.all-app #page-home .intro-patno {
+    position: relative;
+    width: min(700px, 92vw);
+    margin: 0 auto;
+    container-type: inline-size;
+}
+
+body.all-app #page-home .intro-patno > img {
+    width: 100%;
+    display: block;
+}
+
+body.all-app #page-home .intro-patno__frame {
+    position: absolute;
+    top: 21%;
+    right: 13%;
+    bottom: 33%;
+    left: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+body.all-app #page-home .intro-patno__text,
+body.all-app #page-home .intro-text-wrap {
+    margin: 0;
+    max-width: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(13px, 1.72cqi, 16px);
+    font-weight: 400;
+    line-height: 1.48;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #0d1b2a;
+}
+
+body.all-app #page-home .intro-text {
+    display: none;
+}
+
+body.all-app #page-home .text-side h2,
+body.all-app #page-home .text-side h3 {
+    font-family: "Bulbasaur", cursive;
+    font-size: clamp(32px, 4.5vw, 54px);
+}
+
+body.all-app #page-home .social-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(48px, 10vw, 120px);
+}
+
+body.all-app #page-home .social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+body.all-app #page-home .social-item .icon {
+    width: 60px;
+}
+
+body.all-app #page-home .line span {
+    font-family: "Bulbasaur", cursive;
+    letter-spacing: 0.08em;
+}
+
+body.all-app #page-home .blocks {
+    max-width: 1400px;
+    width: 100%;
+}
+
+body.all-app #page-home .block {
+    grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr);
+    gap: clamp(40px, 8vw, 120px);
+}
+
+body.all-app #page-home .info-text h2,
+body.all-app #page-home .info-text h3 {
+    font-family: "Bulbasaur", cursive;
+    color: #0d1b2a;
+}
+
+/* Главная — полная ширина, стили из index.css */
+body.all-app #page-home.page-panel {
+    margin-top: 58px;
+    max-width: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: stretch;
+    padding-bottom: 0;
+}
+
+body.all-app #page-home.page-panel.active {
+    display: block;
+}
+
+body.all-app #page-home .page {
+    margin-top: 0;
+}
+
+body.all-app #page-home .small-patno.router-link {
+    border: none;
+    background: transparent;
+    padding: 0;
+    text-align: center;
+}
+
+body.all-app .page-panel {
+    display: none;
+    margin-top: 100px;
+    padding-bottom: 40px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+body.all-app .page-panel.active {
+    display: flex;
+}
+
+body.all-app .page-panel--frame {
+    margin-top: 58px;
+    max-width: none;
+    width: 100%;
+    padding: 0;
+    align-items: stretch;
+}
+
+body.all-app .page-panel--frame.active {
+    display: block;
+}
+
+body.all-app .page-frame {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 58px);
+    min-height: 480px;
+    border: 0;
+    background: transparent;
+}
+
+body.all-app.route-menu #page-menu.page-panel--frame.active {
+    display: block;
+    margin-top: 58px;
+    max-width: none;
+    padding-bottom: 0;
+}
+
+body.all-app.route-menu #page-menu .page-frame {
+    height: auto;
+    min-height: 0;
+}
+
+/* Подвал общего приложения: только на главной (меню — подвал внутри iframe) */
+body.all-app > footer.footer {
+    display: none;
+    width: 100%;
+    margin-top: 0;
+    min-height: 256px;
+    background: #e0e1dd;
+    padding: 40px clamp(24px, 5vw, 60px);
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+body.all-app > footer.footer.footer--site-visible {
+    display: flex;
+}
+
+body.all-app > footer.footer .footer-left,
+body.all-app > footer.footer .footer-center {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+body.all-app > footer.footer p {
+    font-size: clamp(18px, 2.2vw, 28px);
+    color: #0d1b2a;
+}
+
+body.all-app > footer.footer .footer-logo {
+    width: min(260px, 42vw);
+    height: auto;
+}
+
+body.all-app .router-link:not(.cart-float-btn) {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    padding: 0;
+}
+
+body.all-app .cart-float-btn.router-link {
+    cursor: pointer;
+    border: none;
+    font: inherit;
+    padding: 0;
+}
+
+body.all-app .router-link:focus-visible {
+    outline: 2px solid #415a77;
+    outline-offset: 2px;
+}
+
+/* Главная */
+.hero {
+    text-align: center;
+    padding: 20px 24px 0;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: rgba(224, 225, 221, 0.2);
+    color: #e0e1dd;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+    border: 1px solid rgba(224, 225, 221, 0.35);
+}
+
+.hero h2 {
+    font-family: "Bulbasaur", cursive;
+    font-size: clamp(28px, 4vw, 44px);
+    color: #e0e1dd;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.lead {
+    max-width: 640px;
+    margin: 0 auto 36px;
+    font-size: 18px;
+    line-height: 1.55;
+    color: #c9ccd4;
+}
+
+.tile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 0 20px;
+    max-width: 960px;
+}
+
+.tile {
+    background: rgba(224, 225, 221, 0.95);
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(13, 27, 42, 0.08);
+}
+
+.tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(13, 27, 42, 0.2);
+}
+
+.tile h3 {
+    font-family: "Bulbasaur", cursive;
+    font-size: 22px;
+    color: #0d1b2a;
+}
+
+.tile p {
+    font-size: 15px;
+    color: #415a77;
+    line-height: 1.45;
+    flex-grow: 1;
+}
+
+.tile .goto {
+    align-self: flex-start;
+    margin-top: 8px;
+    padding: 10px 18px;
+    border-radius: 14px;
+    background: #415a77;
+    color: #e0e1dd;
+    text-decoration: none;
+    font-weight: 500;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+}
+
+.tile .goto:hover {
+    background: #778da9;
+}
+
+/* Меню */
+.menu-intro {
+    text-align: center;
+    max-width: 620px;
+    padding: 0 20px;
+    color: #c9ccd4;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 32px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.menu-card {
+    background: linear-gradient(145deg, rgba(224, 225, 221, 0.98), rgba(119, 141, 169, 0.35));
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid rgba(13, 27, 42, 0.12);
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+}
+
+.menu-photo {
+    height: 140px;
+    background: radial-gradient(circle at 30% 30%, #e0e1dd, #415a77 70%, #0d1b2a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Bulbasaur", cursive;
+    font-size: 42px;
+    color: #e0e1dd;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
+}
+
+.menu-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.menu-body h3 {
+    font-family: "Bulbasaur", cursive;
+    font-size: 24px;
+    color: #0d1b2a;
+}
+
+.menu-body p {
+    font-size: 15px;
+    color: #0d1b2a;
+    opacity: 0.85;
+    line-height: 1.45;
+    flex-grow: 1;
+}
+
+.price-tag {
+    font-family: "Bulbasaur", cursive;
+    font-size: 22px;
+    color: #415a77;
+}
+
+.add-btn {
+    margin-top: 8px;
+    padding: 12px;
+    border: none;
+    border-radius: 14px;
+    background: #0d1b2a;
+    color: #e0e1dd;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-btn:hover {
+    background: #415a77;
+}
+
+.add-btn.done {
+    background: #778da9;
+}
+
+.add-btn-ap {
+    margin-top: 8px;
+    padding: 12px;
+    border: none;
+    border-radius: 14px;
+    background: #0d1b2a;
+    color: #e0e1dd;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-btn-ap:hover {
+    background: #415a77;
+}
+
+.add-btn-ap.done {
+    background: #778da9;
+}
+
+body.all-app #routerNav .router-link.active {
+    color: #778da9;
+}
+
+body.all-app #routerNav .router-link {
+    font-family: inherit;
+    font-size: clamp(14px, 1.35vw, 24px);
+    color: #0d1b2a;
+}
+
+body.all-app #routerNav .router-link:hover {
+    color: #415a77;
+}
+
+/* События */
+.timeline {
+    width: 100%;
+    max-width: 760px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.event-card {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 18px;
+    align-items: stretch;
+    background: rgba(224, 225, 221, 0.95);
+    border-radius: 18px;
+    padding: 16px;
+    border: 1px solid rgba(13, 27, 42, 0.1);
+}
+
+.event-date {
+    border-radius: 14px;
+    background: linear-gradient(160deg, #415a77, #0d1b2a);
+    color: #e0e1dd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-variant-numeric: tabular-nums;
+}
+
+.event-date .day {
+    font-family: "Bulbasaur", cursive;
+    font-size: 32px;
+    line-height: 1;
+}
+
+.event-date .mon {
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    margin-top: 6px;
+}
+
+.event-info h3 {
+    font-family: "Bulbasaur", cursive;
+    font-size: 22px;
+    color: #0d1b2a;
+    margin-bottom: 8px;
+}
+
+.event-meta {
+    font-size: 14px;
+    color: #415a77;
+    margin-bottom: 10px;
+}
+
+.event-desc {
+    font-size: 15px;
+    color: #0d1b2a;
+    line-height: 1.5;
+}
+
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.tag {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(65, 90, 119, 0.12);
+    color: #415a77;
+}
+
+/* Мерч (сжатая сетка) */
+.products-mini {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 48px;
+    max-width: 1000px;
+    padding: 0 16px;
+}
+
+.card-mini {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-mini .product-img {
+    width: 220px;
+    border-radius: 10px;
+    border: 3px solid rgba(224, 225, 221, 0.55);
+}
+
+.card-mini .name {
+    font-family: "Bulbasaur", cursive;
+    font-size: 22px;
+    color: #e0e1dd;
+    margin-top: 10px;
+}
+
+.card-mini .price {
+    font-family: "Bulbasaur", cursive;
+    color: #e0e1dd;
+}
+
+/* Корзина */
+.cart-panel-app {
+    width: 100%;
+    max-width: 720px;
+    padding: 0 20px;
+}
+
+.cart-table-app {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+}
+
+.cart-row-app td {
+    background: rgba(224, 225, 221, 0.95);
+    padding: 16px;
+    vertical-align: middle;
+}
+
+.cart-row-app td:first-child {
+    border-radius: 16px 0 0 16px;
+}
+
+.cart-row-app td:last-child {
+    border-radius: 0 16px 16px 0;
+}
+
+.item-name-app {
+    font-weight: 600;
+    color: #0d1b2a;
+}
+
+.item-price-app {
+    font-family: "Bulbasaur", cursive;
+    color: #415a77;
+    font-size: 20px;
+}
+
+.qty-box-app {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qty-box-app button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: #0d1b2a;
+    color: #e0e1dd;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.qty-num-app {
+    min-width: 28px;
+    text-align: center;
+    font-weight: 600;
+    color: #0d1b2a;
+}
+
+.total-bar-app {
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 18px;
+    background: rgba(13, 27, 42, 0.65);
+    color: #e0e1dd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.total-bar-app strong {
+    font-family: "Bulbasaur", cursive;
+    font-size: 28px;
+}
+
+.checkout-btn-app {
+    border: none;
+    border-radius: 14px;
+    padding: 12px 24px;
+    background: #e0e1dd;
+    color: #0d1b2a;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.empty-state-app {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(224, 225, 221, 0.9);
+    border-radius: 20px;
+    color: #0d1b2a;
+    line-height: 1.55;
+}
+
+.empty-state-app a {
+    font-weight: 600;
+    color: #415a77;
+}
+
+/* Мини-игра */
+.game-wrap-app {
+    width: min(480px, 100%);
+    padding: 0 20px;
+    text-align: center;
+}
+
+.scoreboard-app {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: rgba(224, 225, 221, 0.95);
+    border-radius: 14px;
+    color: #0d1b2a;
+}
+
+.scoreboard-app span strong {
+    font-family: "Bulbasaur", cursive;
+    font-size: 24px;
+    color: #415a77;
+}
+
+#gameFieldApp {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    border-radius: 22px;
+    background: radial-gradient(circle at 30% 20%, rgba(224, 225, 221, 0.25), transparent 55%), #0d1b2a;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: inset 0 0 0 1px rgba(224, 225, 221, 0.16);
+}
+
+.hud-row-app {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.hud-btn-app {
+    flex: 1 1 auto;
+    min-width: 120px;
+    padding: 12px;
+    border-radius: 14px;
+    border: none;
+    background: #e0e1dd;
+    color: #0d1b2a;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hud-btn-app:hover {
+    background: #778da9;
+    color: #e0e1dd;
+}
+
+.hud-note-app {
+    color: #c9ccd4;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.target-app {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #e0e1dd, #778da9 60%, #415a77);
+    display: grid;
+    place-items: center;
+    font-family: "Bulbasaur", cursive;
+    font-size: 22px;
+    color: #0d1b2a;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.08s;
+}
+
+.target-app:active {
+    transform: scale(0.92);
+}
+
+/* Контакты (фрагмент из style.css) */
+.contacts-shell {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.contacts-shell .page-title-contact {
+    font-family: "Bulbasaur", cursive;
+    font-size: 32px;
+    color: #e0e1dd;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contacts-shell .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contacts-shell textarea {
+    width: min(700px, 94vw);
+    height: 220px;
+    border-radius: 29px;
+    background: #e0e1dd;
+    border: none;
+    padding: 20px;
+    font-size: 20px;
+    color: #778da9;
+}
+
+.contacts-shell input[type="text"],
+.contacts-shell input[type="email"] {
+    width: min(700px, 94vw);
+    height: 100px;
+    border-radius: 26px;
+    background: #e0e1dd;
+    border: none;
+    padding: 20px;
+    font-size: 20px;
+    color: #778da9;
+}
+
+.contacts-shell button[type="submit"] {
+    width: 200px;
+    height: 45px;
+    border-radius: 15px;
+    background: #e0e1dd;
+    border: none;
+    font-size: 20px;
+    color: #778da9;
+    cursor: pointer;
+}
+
+.contacts-shell .social-app {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacts-shell .subtitle-app {
+    font-family: "Bulbasaur", cursive;
+    font-size: 32px;
+    color: #e0e1dd;
+    margin-bottom: 40px;
+}
+
+.contacts-shell .social-container-app {
+    display: flex;
+    gap: clamp(40px, 12vw, 120px);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contacts-shell .social-column-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contacts-shell .social-icon-app {
+    width: auto;
+    height: 40px;
+}
+
+.contacts-shell .screen-app {
+    width: 260px;
+    border-radius: 15px;
+}
+
+.link-standalone-app {
+    margin-top: 12px;
+    color: #c9ccd4;
+    font-size: 14px;
+    text-align: center;
+    max-width: 520px;
+    line-height: 1.4;
+}
+
+.link-standalone-app a {
+    color: #e0e1dd;
+}
+
+@media (max-width: 560px) {
+    .event-card {
+        grid-template-columns: 1fr;
+    }
+
+    .event-date {
+        flex-direction: row;
+        gap: 12px;
+        justify-content: center;
+    }
+}

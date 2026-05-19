@@ -1,0 +1,165 @@
+@import url("site-shared.css");
+
+.timeline {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.event-card {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 18px;
+    align-items: stretch;
+    background: rgba(224, 225, 221, 0.95);
+    border-radius: 18px;
+    padding: 16px;
+    border: 1px solid rgba(13, 27, 42, 0.1);
+}
+
+.event-date {
+    border-radius: 14px;
+    background: linear-gradient(160deg, #415a77, #0d1b2a);
+    color: #e0e1dd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    font-variant-numeric: tabular-nums;
+}
+
+.event-date .day {
+    font-family: "Bulbasaur", cursive;
+    font-size: 32px;
+    line-height: 1;
+}
+
+.event-date .mon {
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    margin-top: 6px;
+    opacity: 0.92;
+}
+
+.event-info h3 {
+    font-family: "Bulbasaur", cursive;
+    font-size: clamp(20px, 2.2vw, 26px);
+    color: #0d1b2a;
+    margin-bottom: 6px;
+    line-height: 1.1;
+}
+
+.event-price {
+    font-family: "Bulbasaur", cursive;
+    font-size: clamp(18px, 2vw, 22px);
+    color: #415a77;
+    margin-bottom: 4px;
+}
+
+.event-meta {
+    font-size: 14px;
+    color: #415a77;
+    margin-bottom: 10px;
+}
+
+.event-desc {
+    font-size: 15px;
+    color: #0d1b2a;
+    line-height: 1.5;
+}
+
+.event-guests {
+    margin-top: 14px;
+}
+
+.event-guests-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0d1b2a;
+    margin-bottom: 6px;
+}
+
+.event-guests-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.event-guests-list li {
+    font-size: 14px;
+    color: #415a77;
+}
+
+.event-age {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(65, 90, 119, 0.15);
+    color: #415a77;
+}
+
+.event-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.event-buy {
+    margin-top: 0;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    background: #0d1b2a;
+    color: #e0e1dd;
+    font-family: "Bulbasaur", cursive;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.event-buy:hover {
+    background: #415a77;
+}
+
+.event-buy:active,
+.event-buy.done {
+    background: #778da9;
+    transform: scale(0.98);
+}
+
+.tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.tag {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(65, 90, 119, 0.12);
+    color: #415a77;
+}
+
+@media (max-width: 560px) {
+    .event-card {
+        grid-template-columns: 1fr;
+    }
+
+    .event-date {
+        flex-direction: row;
+        gap: 12px;
+        justify-content: center;
+    }
+}
