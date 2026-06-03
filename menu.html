@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Меню — Homie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="embed.css">
+    <link rel="stylesheet" href="modals.css">
+    <script src="embed.js"></script>
+</head>
+<body class="menu-layout">
+
+<header class="header">
+    <nav class="nav">
+        <a href="all-pages.html#home">Главная</a>
+        <a href="all-pages.html#events">События</a>
+        <a href="all-pages.html#menu" class="active">Меню</a>
+        <a href="all-pages.html#merch">Мерч</a>
+        <a href="all-pages.html#minigame">Пошалим</a>
+        <a href="all-pages.html#contacts">Контакты</a>
+    </nav>
+</header>
+
+<div class="cart-float">
+    <a href="all-pages.html#korzina" aria-label="Корзина"><img src="korzina.png" alt=""></a>
+</div>
+
+<main class="page-main menu-page">
+    <h1 class="page-title">МЕНЮ</h1>
+
+    <div class="menu-board">
+
+        <section class="menu-section">
+            <div class="menu-section__head">
+                <h2 class="menu-section__title">ЗАКУСКИ</h2>
+            </div>
+            <div class="menu-section__body">
+            <ul class="menu-lines">
+                <li class="menu-line">
+                    <span class="menu-line-name">Картошка фри</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">180</span>
+                </li>
+                <li class="menu-line">
+                    <span class="menu-line-name">Наггетсы</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">180</span>
+                </li>
+                <li class="menu-line">
+                    <span class="menu-line-name">Луковые кольца</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">150</span>
+                </li>
+                <li class="menu-line">
+                    <span class="menu-line-name">Сырные шарики</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">180</span>
+                </li>
+            </ul>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="menu-section__head">
+                <h2 class="menu-section__title">СЭНДВИЧИ</h2>
+            </div>
+            <div class="menu-section__body">
+            <ul class="menu-lines">
+                <li class="menu-line">
+                    <span class="menu-line-name">Курица</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">310</span>
+                </li>
+                <li class="menu-line">
+                    <span class="menu-line-name">Тунец</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">350</span>
+                </li>
+                <li class="menu-line">
+                    <span class="menu-line-name">Вегетарианский</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">350</span>
+                </li>
+            </ul>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="menu-section__head">
+                <h2 class="menu-section__title">ДЕСЕРТЫ</h2>
+            </div>
+            <div class="menu-section__body">
+            <ul class="menu-lines">
+                <li class="menu-line">
+                    <span class="menu-line-name">Мороженное</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">350</span>
+                </li>
+                <li class="menu-line">
+                    <span class="menu-line-name">Панкейки с медом</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">350</span>
+                </li>
+                <li class="menu-line">
+                    <span class="menu-line-name">Чизкейк</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">350</span>
+                </li>
+            </ul>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <div class="menu-section__head">
+                <h2 class="menu-section__title">НАПИТКИ</h2>
+            </div>
+            <div class="menu-section__body">
+            <ul class="menu-lines">
+                <li class="menu-line">
+                    <span class="menu-line-name">Чай</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">350</span>
+                </li>
+                <li class="menu-line">
+                    <span class="menu-line-name">Молочные коктейли</span>
+                    <span class="menu-line-dots" aria-hidden="true"></span>
+                    <span class="menu-line-price">350</span>
+                </li>
+            </ul>
+
+            <div class="menu-coffee" role="table" aria-label="Кофе">
+                <div class="menu-coffee-head" role="row">
+                    <span class="menu-coffee-name menu-coffee-name--title" role="columnheader">КОФЕ</span>
+                    <span role="columnheader">XS</span>
+                    <span role="columnheader">M</span>
+                    <span role="columnheader">L</span>
+                </div>
+                <div class="menu-coffee-row" role="row">
+                    <span class="menu-coffee-name" role="rowheader">Американо</span>
+                    <span class="menu-coffee-price" role="cell">350</span>
+                    <span class="menu-coffee-price" role="cell">350</span>
+                    <span class="menu-coffee-price" role="cell">350</span>
+                </div>
+                <div class="menu-coffee-row" role="row">
+                    <span class="menu-coffee-name" role="rowheader">Капучино</span>
+                    <span class="menu-coffee-price" role="cell">350</span>
+                    <span class="menu-coffee-price" role="cell">350</span>
+                    <span class="menu-coffee-price" role="cell">350</span>
+                </div>
+                <div class="menu-coffee-row" role="row">
+                    <span class="menu-coffee-name" role="rowheader">Латте</span>
+                    <span class="menu-coffee-price" role="cell">350</span>
+                    <span class="menu-coffee-price" role="cell">350</span>
+                    <span class="menu-coffee-price" role="cell">350</span>
+                </div>
+            </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-left">
+        <p>8-910-123-45-67</p>
+        <p>8-777-777-77-77</p>
+    </div>
+    <div class="footer-center">
+        <p>@homie_iv</p>
+        <p>your_homie</p>
+    </div>
+    <img src="logo.png" class="footer-logo" alt="Homie">
+</footer>
+
+</body>
+</html>

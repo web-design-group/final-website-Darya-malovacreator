@@ -1,0 +1,99 @@
+html.is-embed,
+html.is-embed body {
+    outline: none;
+}
+
+/* Одна полоса прокрутки — внутри iframe, не на html и body одновременно */
+html.is-embed {
+    height: 100%;
+    overflow: hidden;
+}
+
+html.is-embed.merch-embed {
+    background-color: #415a77;
+}
+
+/* Мерч: одна полоса прокрутки на body (контент выше viewport не обрезается html) */
+html.is-embed.merch-embed body {
+    height: 100%;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+html.is-embed body {
+    height: 100%;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+html.is-embed .header,
+html.is-embed .cart-big,
+html.is-embed .cart-float,
+html.is-embed:not(.events-embed):not(.menu-embed):not(.merch-embed):not(.contacts-embed):not(.korzina-embed) footer.footer,
+html.is-embed .homie-page-back,
+html.is-embed a.cart-btn {
+    display: none !important;
+}
+
+html.is-embed.tovar-embed .homie-page-back,
+html.is-embed.tovar-embed .homie-page-cart,
+html.is-embed.korzina-embed .homie-page-back {
+    display: flex !important;
+}
+
+html.is-embed .main,
+html.is-embed .page-main,
+html.is-embed .tovar-page,
+html.is-embed main.page {
+    margin-top: 0 !important;
+}
+
+html.is-embed .page {
+    margin-top: 0 !important;
+    flex: 1;
+    min-height: 0;
+}
+
+html.is-embed body.page-game .page {
+    height: 100vh !important;
+}
+
+html.is-embed.events-embed footer.footer,
+html.is-embed.menu-embed footer.footer,
+html.is-embed.merch-embed footer.footer,
+html.is-embed.contacts-embed footer.footer,
+html.is-embed.korzina-embed footer.footer {
+    display: flex !important;
+}
+
+html.is-embed.contacts-embed body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+html.is-embed.contacts-embed .main {
+    flex: 1 0 auto;
+}
+
+html.is-embed.contacts-embed .footer {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+html.is-embed.korzina-embed body.page-korzina {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+html.is-embed.korzina-embed body.page-korzina .page-main {
+    flex: 1 0 auto;
+}
+
+html.is-embed.korzina-embed body.page-korzina .footer {
+    flex-shrink: 0;
+    margin-top: auto;
+}

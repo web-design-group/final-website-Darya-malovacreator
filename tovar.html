@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Товар — Homie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tovar.css">
+    <link rel="stylesheet" href="modals.css">
+    <link rel="stylesheet" href="embed.css">
+    <script src="embed.js"></script>
+    <script src="products-data.js"></script>
+</head>
+<body class="page-tovar">
+
+<header class="header">
+    <nav class="nav">
+        <a href="all-pages.html#home">Главная</a>
+        <a href="all-pages.html#events">События</a>
+        <a href="all-pages.html#menu">Меню</a>
+        <a href="all-pages.html#merch" class="active">Мерч</a>
+        <a href="all-pages.html#minigame">Пошалим</a>
+        <a href="all-pages.html#contacts">Контакты</a>
+    </nav>
+</header>
+
+<a href="merch.html" class="homie-page-back" id="backBtn" aria-label="Назад в мерч">
+    <img src="strelka.png" alt="">
+</a>
+<a href="all-pages.html#korzina" class="homie-page-cart" id="tovarCart" aria-label="Корзина">
+    <img src="korzina.png" alt="">
+</a>
+
+<div class="tovar-page">
+    <div class="tovar-head-spacer" aria-hidden="true"></div>
+    <main class="wrapper">
+        <div class="product-grid" id="productRoot"></div>
+    </main>
+</div>
+
+<footer class="footer">
+    <div class="footer-left">
+        <p>8-910-123-45-67</p>
+        <p>8-777-777-77-77</p>
+    </div>
+    <div class="footer-center">
+        <p>@homie_iv</p>
+        <p>your_homie</p>
+    </div>
+    <img src="logo.png" class="footer-logo" alt="Homie">
+</footer>
+
+<script src="modals.js"></script>
+<script src="tovar-page.js"></script>
+</body>
+</html>

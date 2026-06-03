@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>События — Homie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="events.css">
+    <link rel="stylesheet" href="embed.css">
+    <link rel="stylesheet" href="modals.css">
+    <script src="embed.js"></script>
+</head>
+<body class="page-events">
+
+<header class="header">
+    <nav class="nav">
+        <a href="all-pages.html#home">Главная</a>
+        <a href="all-pages.html#events" class="active">События</a>
+        <a href="all-pages.html#menu">Меню</a>
+        <a href="all-pages.html#merch">Мерч</a>
+        <a href="all-pages.html#minigame">Пошалим</a>
+        <a href="all-pages.html#contacts">Контакты</a>
+    </nav>
+</header>
+
+<main class="page-main">
+    <div class="events-list">
+        <article class="event-card" data-day="30" data-mon="МАЯ">
+            <header class="event-card__head">
+                <h2 class="event-card__title">ПРЯМ ИЗ 80-Х</h2>
+                <p class="event-price">800 руб.</p>
+                <div class="event-datetime">
+                    <p class="event-date">30.05.</p>
+                    <p class="event-time">19:00-22:00</p>
+                </div>
+            </header>
+            <div class="event-card__body">
+                <p class="event-desc">
+                    Приглашаем всех любителей атмосферы 80-х на уникальную вечеринку с тематикой ретро! Это будет праздник для тех, кто ценит эстетику музыки, яркий стиль и незабываемый дух времени.
+                </p>
+                <div class="event-participants">
+                    <p class="event-participants__label">Диджей:</p>
+                    <p class="event-participants__name">NeonPulse</p>
+                    <p class="event-participants__name">Retro_vpl</p>
+                </div>
+                <div class="event-card__action">
+                    <p class="event-age">16+</p>
+                    <button type="button" class="event-buy add-btn" data-name="ПРЯМ ИЗ 80-Х — билет" data-price="800" data-label="КУПИТЬ БИЛЕТЫ"><span class="event-buy__label"><span>КУПИТЬ</span><span>БИЛЕТЫ</span></span></button>
+                </div>
+            </div>
+        </article>
+
+        <article class="event-card" data-day="05" data-mon="ИЮНЯ">
+            <header class="event-card__head">
+                <h2 class="event-card__title">ТЕХНО ВЕЧЕР</h2>
+                <p class="event-price">1000 руб.</p>
+                <div class="event-datetime">
+                    <p class="event-date">05.06.</p>
+                    <p class="event-time">21:00-24:00</p>
+                </div>
+            </header>
+            <div class="event-card__body">
+                <p class="event-desc">
+                    Приглашаем тебя на незабываемую техно вечеринку, где звучание мощных битов и атмосферных мелодий создадут идеальную атмосферу для танцев и свободы!
+                </p>
+                <div class="event-participants">
+                    <p class="event-participants__label">Диджей:</p>
+                    <p class="event-participants__name">DJ Rush</p>
+                    <p class="event-participants__name">7kase</p>
+                    <p class="event-participants__name">m1_iku</p>
+                </div>
+                <div class="event-card__action">
+                    <p class="event-age">18+</p>
+                    <button type="button" class="event-buy add-btn" data-name="ТЕХНО ВЕЧЕР — билет" data-price="1000" data-label="КУПИТЬ БИЛЕТЫ"><span class="event-buy__label"><span>КУПИТЬ</span><span>БИЛЕТЫ</span></span></button>
+                </div>
+            </div>
+        </article>
+
+        <article class="event-card" data-day="01" data-mon="ИЮНЯ">
+            <header class="event-card__head">
+                <h2 class="event-card__title">МИР ГРАФФИТИ</h2>
+                <p class="event-price">бесплатно</p>
+                <div class="event-datetime">
+                    <p class="event-date">01.06.</p>
+                    <p class="event-time">18:00-20:00</p>
+                </div>
+            </header>
+            <div class="event-card__body">
+                <p class="event-desc">
+                    Приглашаем на увлекательную лекцию о мире граффити! Узнайте о ведущих техниках, приемах и истории уличного искусства, которое меняет облик городов.
+                </p>
+                <div class="event-participants">
+                    <p class="event-participants__label">Лекторы:</p>
+                    <p class="event-participants__name">Алена Марченко</p>
+                    <p class="event-participants__name">Павел Петунин</p>
+                    <p class="event-participants__name">Никита Кошонков</p>
+                </div>
+                <div class="event-card__action">
+                    <p class="event-age">18+</p>
+                    <button type="button" class="event-buy" data-event-signup>ЗАПИСАТЬСЯ</button>
+                </div>
+            </div>
+        </article>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-left">
+        <p>8-777-777-77-77</p>
+        <p>tvoyhomie@gmail.com</p>
+    </div>
+    <div class="footer-center">
+        <p>@your_homie</p>
+        <p>tvoyhomie</p>
+    </div>
+    <img src="logo.png" class="footer-logo" alt="Homie">
+</footer>
+
+<script src="modals.js"></script>
+</body>
+</html>

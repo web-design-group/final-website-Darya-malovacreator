@@ -1,0 +1,260 @@
+@import url("site-shared.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --contacts-font: "Inter", sans-serif;
+    --contacts-size: 20px;
+}
+
+body {
+    font-family: var(--contacts-font);
+    font-size: var(--contacts-size);
+    background: url("background.png") no-repeat center top / cover fixed;
+    background-color: #415a77;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(65, 90, 119, 0.5);
+    z-index: -1;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.644),
+        transparent 20%,
+        transparent 80%,
+        rgba(0, 0, 0, 0.644)
+    );
+    z-index: -1;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 58px;
+    background: #e0e1dd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.nav {
+    display: flex;
+    gap: clamp(16px, 4vw, 40px);
+    padding: 0 clamp(16px, 4vw, 48px);
+}
+
+.nav a {
+    font-family: var(--contacts-font);
+    font-size: clamp(15px, 1.4vw, 24px);
+    color: #0d1b2a;
+    text-decoration: none;
+}
+
+.nav .active {
+    color: #778da9;
+}
+
+.main {
+    margin-top: 58px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 clamp(16px, 4vw, 40px) 48px;
+}
+
+.contacts {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: clamp(24px, 5vh, 48px);
+}
+
+.form textarea,
+.form input,
+.form button {
+    font-family: var(--contacts-font);
+    font-size: var(--contacts-size);
+}
+
+.contacts .title,
+.social .subtitle {
+    font-family: "Bulbasaur", cursive;
+    font-size: var(--homie-page-heading-size);
+    color: var(--homie-page-heading-color);
+    font-weight: 400;
+    line-height: 1.15;
+    text-align: center;
+}
+
+.contacts .title {
+    margin-bottom: 30px;
+    white-space: nowrap;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    max-width: 700px;
+    height: 220px;
+    border-radius: 29px;
+    background: #e0e1dd;
+    border: none;
+    padding: 20px;
+    color: #778da9;
+    resize: vertical;
+}
+
+textarea::placeholder,
+input::placeholder {
+    font-family: var(--contacts-font);
+    font-size: var(--contacts-size);
+    color: #778da9;
+}
+
+input {
+    width: 100%;
+    max-width: 700px;
+    height: 100px;
+    border-radius: 26px;
+    background: #e0e1dd;
+    border: none;
+    padding: 20px;
+    color: #778da9;
+}
+
+button {
+    width: 200px;
+    height: 45px;
+    border-radius: 15px;
+    background: #e0e1dd;
+    border: none;
+    color: #778da9;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button:active {
+    background: #415a77;
+    color: #e0e1dd;
+}
+
+.social {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.social .subtitle {
+    margin-bottom: 40px;
+}
+
+.social-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(40px, 10vw, 120px);
+}
+
+.social-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: auto;
+    height: 40px;
+}
+
+.screen {
+    width: min(260px, 80vw);
+    border-radius: 15px;
+    display: block;
+}
+
+.social-screen-link {
+    display: block;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.social-screen-link:focus-visible {
+    outline: 2px solid #e0e1dd;
+    outline-offset: 4px;
+}
+
+body.page-contacts {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.page-contacts .main {
+    flex: 1 0 auto;
+}
+
+.footer {
+    margin-top: 100px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    min-height: 170px;
+    background: #e0e1dd;
+    padding: 27px clamp(16px, 5vw, 40px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+html.is-embed.contacts-embed .footer {
+    margin-top: 80px;
+}
+
+.footer-left,
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer p {
+    font-family: var(--contacts-font);
+    font-size: clamp(18px, 2.2vw, 28px);
+    color: #0d1b2a;
+}
+
+.footer-logo {
+    width: min(260px, 42vw);
+    height: auto;
+}

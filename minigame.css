@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Inter';
+    background: url("background.png");
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* СИНИЙ ОВЕРЛЕЙ */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(65, 90, 119, 0.5);
+    z-index: -1;
+}
+
+/* ГРАДИЕНТЫ */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.644), transparent 20%, transparent 80%, rgba(0,0,0,0.644));
+    z-index: -1;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 58px;
+    background: #E0E1DD;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+}
+
+.nav a {
+    font-size: 24px;
+    color: #0D1B2A;
+    text-decoration: none;
+}
+
+.nav .active {
+    color: #778DA9;
+}
+/* ОСНОВА */
+.page {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    margin-top: 58px;
+
+    display: grid;
+
+    grid-template-rows: 1fr 168px;
+}
+
+/* ХОЛСТ */
+#canvas{
+
+    width:100%;
+    height:100%;
+
+    cursor:crosshair;
+}
+
+/* НИЖНЯЯ ПАНЕЛЬ */
+.tools {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    z-index: 50;
+}
+
+/* КНОПКИ */
+.tools button{
+
+    width:140px;
+    height:140px;
+
+    border:none;
+    background:none;
+
+    cursor:pointer;
+}
+
+/* PNG */
+.tools img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+.tools button.color-btn {
+    flex-shrink: 0;
+}
+
+.tools button.color-btn.active-color {
+    filter: drop-shadow(0 0 10px white);
+}
+
+.footer {
+    flex-shrink: 0;
+    width: 100%;
+    min-height: 170px;
+    background: #e0e1dd;
+    padding: 27px clamp(16px, 5vw, 40px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.footer-left,
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer p {
+    font-size: clamp(18px, 2.2vw, 28px);
+    color: #0d1b2a;
+}
+
+.footer-logo {
+    width: min(260px, 42vw);
+    height: auto;
+}

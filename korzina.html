@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Корзина — Homie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="korzina.css">
+    <link rel="stylesheet" href="embed.css">
+    <link rel="stylesheet" href="modals.css">
+    <script src="embed.js"></script>
+</head>
+<body class="page-korzina">
+
+<button type="button" class="homie-page-back" id="korzinaBack" aria-label="Назад">
+    <img src="strelka.png" alt="">
+</button>
+
+<header class="header">
+    <nav class="nav">
+        <a href="all-pages.html#home">Главная</a>
+        <a href="all-pages.html#events">События</a>
+        <a href="all-pages.html#menu">Меню</a>
+        <a href="all-pages.html#merch">Мерч</a>
+        <a href="all-pages.html#minigame">Пошалим</a>
+        <a href="all-pages.html#contacts">Контакты</a>
+    </nav>
+</header>
+
+<div class="cart-float">
+    <a href="all-pages.html#korzina" aria-label="Корзина"><img src="korzina.png" alt=""></a>
+</div>
+
+<main class="page-main">
+    <h1 class="page-title">КОРЗИНА</h1>
+
+    <div class="cart-panel">
+        <div id="cartEmpty" class="empty-state" hidden>
+            Пока пусто. Загляни в <a href="all-pages.html#menu">меню</a> или <a href="all-pages.html#merch">мерч</a>, чтобы добавить позиции.
+        </div>
+        <div class="cart-list" id="cartList" hidden></div>
+        <div class="total-bar" id="cartTotalWrap" hidden>
+            <span>Итого</span>
+            <strong><span id="cartTotal">0</span> ₽</strong>
+            <button type="button" class="checkout-btn" id="checkoutBtn">Оформить (демо)</button>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-left">
+        <p>8-910-123-45-67</p>
+        <p>8-777-777-77-77</p>
+    </div>
+    <div class="footer-center">
+        <p>@homie_iv</p>
+        <p>your_homie</p>
+    </div>
+    <img src="logo.png" class="footer-logo" alt="Homie">
+</footer>
+
+<script>
+(function () {
+    const KEY = "homieCart";
+
+    function read() {
+        try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch { return []; }
+    }
+
+    function write(arr) {
+        localStorage.setItem(KEY, JSON.stringify(arr));
+    }
+
+    function money(n) {
+        return Math.round(n).toLocaleString("ru-RU");
+    }
+
+    const cartList = document.getElementById("cartList");
+    const cartEmpty = document.getElementById("cartEmpty");
+    const cartTotalWrap = document.getElementById("cartTotalWrap");
+    const cartTotal = document.getElementById("cartTotal");
+    const checkoutBtn = document.getElementById("checkoutBtn");
+
+    function render() {
+        let cart = read();
+        cartList.innerHTML = "";
+        if (!cart.length) {
+            cartEmpty.hidden = false;
+            cartList.hidden = true;
+            cartTotalWrap.hidden = true;
+            return;
+        }
+        cartEmpty.hidden = true;
+        cartList.hidden = false;
+        cartTotalWrap.hidden = false;
+
+        let sum = 0;
+        cart.forEach(function (item, index) {
+            const line = item.price * item.qty;
+            sum += line;
+
+            const row = document.createElement("article");
+            row.className = "cart-item" + (item.type === "merch" && item.img ? " cart-item--merch" : "");
+            const qtyHtml =
+                '<span class="qty-box">' +
+                '<button type="button" data-act="minus" data-i="' + index + '">−</button>' +
+                '<span class="qty-num">' + item.qty + "</span>" +
+                '<button type="button" data-act="plus" data-i="' + index + '">+</button>' +
+                "</span>";
+
+            if (item.type === "merch" && item.img) {
+                let metaHtml = "";
+                if (item.size) metaHtml += '<p class="cart-item__meta">Размер: ' + item.size + "</p>";
+                if (item.color) metaHtml += '<p class="cart-item__meta">Цвет: ' + item.color + "</p>";
+                row.innerHTML =
+                    '<img class="cart-item__img" src="' + item.img + '" alt="">' +
+                    '<div class="cart-item__body">' +
+                    '<p class="cart-item__title">' + item.name + "</p>" +
+                    metaHtml +
+                    "</div>" +
+                    '<div class="cart-item__side">' +
+                    '<p class="cart-item__price">' + money(item.price) + "</p>" +
+                    qtyHtml +
+                    "</div>";
+            } else {
+                row.innerHTML =
+                    '<div class="cart-item__body cart-item__body--plain">' +
+                    '<p class="cart-item__title">' + item.name + "</p>" +
+                    '<p class="cart-item__meta">' + money(item.price) + " ₽ × " + item.qty + "</p>" +
+                    "</div>" +
+                    '<div class="cart-item__side">' +
+                    '<p class="cart-item__price">' + money(line) + " ₽</p>" +
+                    qtyHtml +
+                    "</div>";
+            }
+            cartList.appendChild(row);
+        });
+
+        cartTotal.textContent = money(sum);
+
+        cartList.onclick = function (e) {
+            const btn = e.target.closest("button[data-act]");
+            if (!btn) return;
+            const i = Number(btn.dataset.i);
+            const act = btn.dataset.act;
+            cart = read();
+            if (!cart[i]) return;
+            if (act === "plus") cart[i].qty += 1;
+            else if (act === "minus") cart[i].qty -= 1;
+            cart = cart.filter(function (x) { return x.qty > 0; });
+            write(cart);
+            render();
+        };
+    }
+
+    window.homieCartRender = render;
+    render();
+
+    window.addEventListener("storage", function (e) {
+        if (e.key === KEY) render();
+    });
+    window.addEventListener("homie-cart-updated", render);
+
+    var validPrev = ["home", "events", "menu", "merch", "minigame", "contacts"];
+    var korzinaBack = document.getElementById("korzinaBack");
+    if (korzinaBack) {
+        korzinaBack.addEventListener("click", function (e) {
+            e.preventDefault();
+            var prev = "home";
+            try {
+                prev = sessionStorage.getItem("homiePrevRoute") || "home";
+            } catch (err) {}
+            if (validPrev.indexOf(prev) === -1) prev = "home";
+            if (window.self !== window.top) {
+                try {
+                    window.parent.location.hash = prev;
+                } catch (err) {
+                    window.top.location.href = "all-pages.html#" + prev;
+                }
+                return;
+            }
+            if (document.referrer && /all-pages\.html/i.test(document.referrer)) {
+                window.location.href = "all-pages.html#" + prev;
+                return;
+            }
+            if (window.history.length > 1) {
+                window.history.back();
+                return;
+            }
+            window.location.href = "all-pages.html#" + prev;
+        });
+    }
+})();
+</script>
+<script src="modals.js"></script>
+</body>
+</html>
